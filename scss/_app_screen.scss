@@ -54,6 +54,7 @@ $white: #fff;
 		}
 		.app_item-actions{
 			height: 50px;
+			opacity: 1;
 		}
 		.action-icon{
 			transform: scale(1);
@@ -74,9 +75,11 @@ $white: #fff;
 	&-actions{
 		transition: all .2s;
 		height: 0;
+		opacity: 0;
 		overflow: hidden;
 		padding-top: 10px;
 		.action{
+			padding: 5px;
 			&-icon{
 				fill: var(--white);
 				width: 22px;
