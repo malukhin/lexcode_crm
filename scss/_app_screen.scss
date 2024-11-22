@@ -1,4 +1,6 @@
 $white: #fff;
+$app-line-opacity: .1;
+
 .app-wrap{
 	--white: #{$white};
 	background: #5236b7 url("../images/bg-app.jpg") no-repeat 0 0 / cover;
@@ -10,13 +12,13 @@ $white: #fff;
 			margin-bottom: -1px;
 		}
 	}
-	.col-md-3:nth-child(4n){
+	.col-6:nth-child(2n){
 		.app_item{--line-opacity-y: 0;}
 	}
 }
 .app_item{
-	--line-opacity-y: .1;
-	--line-opacity-x: .1;
+	--line-opacity-y: #{$app-line-opacity};
+	--line-opacity-x: #{$app-line-opacity};
 	aspect-ratio: 10/8;
 	text-decoration: none;
 	color: var(--white);
@@ -64,8 +66,8 @@ $white: #fff;
 	&-icon{
 		fill: var(--white);
 		transition: all .2s;
-		width: 120px;
 		height: auto;
+		width: 60px;
 	}
 	&-title{
 		font-size: 18px;
@@ -74,10 +76,10 @@ $white: #fff;
 	}
 	&-actions{
 		transition: all .2s;
-		height: 0;
-		opacity: 0;
 		overflow: hidden;
 		padding-top: 10px;
+		height: 50px;
+		opacity: 1;
 		.action{
 			padding: 5px;
 			&-icon{
@@ -85,8 +87,44 @@ $white: #fff;
 				width: 22px;
 				transition: all .2s;
 				transition-delay: .1s;
-				transform: scale(.2);
-				opacity: 0;
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+/* копьютеры с мышкой */
+@media (hover: hover) {
+	.app_item{
+		&:hover{
+			text-decoration: none;
+			.app_item-icon{
+				width: 80px;
+				opacity: .2;
+			}
+			.app_item-actions{
+				height: 50px;
+				opacity: 1;
+			}
+			.action-icon{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+		&-icon{
+			width: 120px;
+		}
+		&-actions{
+			height: 0;
+			opacity: 0;
+			height: 0;
+			.action{
+				&-icon{
+					transform: scale(.2);
+					opacity: 0;
+				}
 			}
 		}
 	}
@@ -106,7 +144,22 @@ $white: #fff;
 	
 	
 /* LG -------------------- */
-@media (min-width: 992px){}
+@media (min-width: 992px){
+	
+	.app-wrap{
+		.col-6:nth-child(1n){
+			.app_item{--line-opacity-y: #{$app-line-opacity};}
+		}
+		.col-lg-3:nth-child(4n){
+			.app_item{--line-opacity-y: 0;}
+		}
+	}
+	.app_item{
+		&-icon{
+			width: 80px;
+		}
+	}
+}
 	
 	
 /* XL -------------------- */
