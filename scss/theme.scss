@@ -16,8 +16,31 @@ $s: var(--secondary);
 html{
 	scroll-behavior: smooth;
 }
-	
-	
+body {
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+	font-family: 'Mulish', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.container{
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 16px;
+}
+.svg-sprite{
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -200%;
+}
+
+
+
 	
 
 @import '_app_screen';

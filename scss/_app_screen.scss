@@ -1,19 +1,34 @@
-$white: #fff;
+$white: #ffffff;
 $app-line-opacity: .1;
 
-.app-wrap{
+.app{
 	--white: #{$white};
+	--action-size: 18px;
 	background: #5236b7 url("../images/bg-app.jpg") no-repeat 0 0 / cover;
-	height: 100vh;
+	min-height: 100vh;
 	color: var(--white);
-	.row{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&-row{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
 		overflow: hidden;
 		& > div{
 			margin-bottom: -1px;
 		}
 	}
-	.col-6:nth-child(2n){
-		.app_item{--line-opacity-y: 0;}
+	&-row{
+		display: flex;
+		flex-wrap: wrap;
+		--app-width: calc(100% / 2);
+		.app-col:nth-child(2n){
+			.app_item{--line-opacity-y: 0;}
+		}
+	}
+	&-col{
+		width: var(--app-width);
 	}
 }
 .app_item{
@@ -28,6 +43,7 @@ $app-line-opacity: .1;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	height: 100%;
 	&:before,&:after{
 		content: '';
 		display: block;
@@ -48,26 +64,11 @@ $app-line-opacity: .1;
 		left: 0;
 		opacity: var(--line-opacity-x);
 	}
-	&:hover{
-		text-decoration: none;
-		.app_item-icon{
-			width: 80px;
-			opacity: .2;
-		}
-		.app_item-actions{
-			height: 50px;
-			opacity: 1;
-		}
-		.action-icon{
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
 	&-icon{
 		fill: var(--white);
 		transition: all .2s;
 		height: auto;
-		width: 60px;
+		width: 42%;
 	}
 	&-title{
 		font-size: 18px;
@@ -75,20 +76,36 @@ $app-line-opacity: .1;
 		margin-bottom: 0;
 	}
 	&-actions{
+		display: none;
 		transition: all .2s;
 		overflow: hidden;
-		padding-top: 10px;
-		height: 50px;
-		opacity: 1;
+		margin-top: 0;
+		padding-top: 0;
+		opacity: 0;
+		height: 0;
+		position: relative;
+		min-width: 30%;
+		text-align: center;
+		&:after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: var(--white);
+			opacity: $app-line-opacity;
+		}
 		.action{
-			padding: 5px;
+			padding: calc(var(--action-size) / 4);
 			&-icon{
 				fill: var(--white);
-				width: 22px;
+				width: var(--action-size);
 				transition: all .2s;
 				transition-delay: .1s;
-				transform: scale(1);
-				opacity: 1;
+				transform: scale(.2);
+				opacity: 0;
 			}
 		}
 	}
@@ -101,31 +118,25 @@ $app-line-opacity: .1;
 		&:hover{
 			text-decoration: none;
 			.app_item-icon{
-				width: 80px;
+				width: 20%;
+				opacity: .2;
+			}
+			.app_item-title{
 				opacity: .2;
 			}
 			.app_item-actions{
-				height: 50px;
 				opacity: 1;
+				height: calc(var(--action-size) * 2);
+				margin-top: calc(var(--action-size) / 2);
+				padding-top: calc(var(--action-size) / 2);
 			}
 			.action-icon{
 				transform: scale(1);
 				opacity: 1;
 			}
 		}
-		&-icon{
-			width: 120px;
-		}
 		&-actions{
-			height: 0;
-			opacity: 0;
-			height: 0;
-			.action{
-				&-icon{
-					transform: scale(.2);
-					opacity: 0;
-				}
-			}
+			display: block;
 		}
 	}
 }
@@ -136,27 +147,53 @@ $app-line-opacity: .1;
 	
 
 /* SM -------------------- */
-@media (min-width: 576px){}
+@media (min-width: 576px){
+	.app{
+		&-row{
+			.app-col:nth-child(1n){
+				.app_item{--line-opacity-y: #{$app-line-opacity};}
+			}
+			--app-width: calc(100% / 3);
+			.app-col:nth-child(3n){
+				.app_item{--line-opacity-y: 0;}
+			}
+		}
+	}
+}
 	
 	
 /* MD -------------------- */
-@media (min-width: 768px){}
+@media (min-width: 768px){
+	.app{
+		&-row{
+			.app-col:nth-child(1n){
+				.app_item{--line-opacity-y: #{$app-line-opacity};}
+			}
+			--app-width: calc(100% / 4);
+			.app-col:nth-child(4n){
+				.app_item{--line-opacity-y: 0;}
+			}
+		}
+	}
+}
 	
 	
 /* LG -------------------- */
 @media (min-width: 992px){
 	
-	.app-wrap{
-		.col-6:nth-child(1n){
-			.app_item{--line-opacity-y: #{$app-line-opacity};}
+	.app{
+		&-row{
+			.app-col:nth-child(1n){
+				.app_item{--line-opacity-y: #{$app-line-opacity};}
+			}
 		}
-		.col-lg-3:nth-child(4n){
-			.app_item{--line-opacity-y: 0;}
-		}
-	}
-	.app_item{
-		&-icon{
-			width: 80px;
+		@for $i from 4 through 8 {
+			.size-#{$i}{
+				--app-width: calc(100% / #{$i});
+				.app-col:nth-child(#{$i}n){
+				.app_item{--line-opacity-y: 0;}
+				}
+			}
 		}
 	}
 }
