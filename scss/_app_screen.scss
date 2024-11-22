@@ -72,7 +72,7 @@ $app-line-opacity: .1;
 	}
 	&-title{
 		font-size: 18px;
-		margin-top: .9em;
+		margin-top: 6%;
 		margin-bottom: 0;
 	}
 	&-actions{
@@ -127,8 +127,8 @@ $app-line-opacity: .1;
 			.app_item-actions{
 				opacity: 1;
 				height: calc(var(--action-size) * 2);
-				margin-top: calc(var(--action-size));
-				padding-top: calc(var(--action-size));
+				margin-top: 6%;
+				padding-top: 6%;
 			}
 			.action-icon{
 				transform: scale(1);
