@@ -127,8 +127,8 @@ $app-line-opacity: .1;
 			.app_item-actions{
 				opacity: 1;
 				height: calc(var(--action-size) * 2);
-				margin-top: calc(var(--action-size) / 2);
-				padding-top: calc(var(--action-size) / 2);
+				margin-top: calc(var(--action-size));
+				padding-top: calc(var(--action-size));
 			}
 			.action-icon{
 				transform: scale(1);
