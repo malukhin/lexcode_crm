@@ -1,14 +1,22 @@
 $white: #fff;
-
-.app{
-	&-wrap{
-		--white: #{$white};
-		background: #5236b7 url("../images/bg-app.jpg") no-repeat 0 0 / cover;
-		height: 100vh;
-		color: var(--white);
+.app-wrap{
+	--white: #{$white};
+	background: #5236b7 url("../images/bg-app.jpg") no-repeat 0 0 / cover;
+	height: 100vh;
+	color: var(--white);
+	.row{
+		overflow: hidden;
+		& > div{
+			margin-bottom: -1px;
+		}
+	}
+	.col-md-3:nth-child(4n){
+		.app_item{--line-opacity-y: 0;}
 	}
 }
 .app_item{
+	--line-opacity-y: .1;
+	--line-opacity-x: .1;
 	aspect-ratio: 10/8;
 	text-decoration: none;
 	color: var(--white);
@@ -17,6 +25,27 @@ $white: #fff;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	&:before,&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		background: var(--white);
+	}
+	&:before{
+		width: 1px;
+		height: 100%;
+		top: 0;
+		right: 0;
+		opacity: var(--line-opacity-y);
+	}
+	&:after{
+		height: 1px;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		opacity: var(--line-opacity-x);
+	}
 	&:hover{
 		text-decoration: none;
 		.app_item-icon{
@@ -52,9 +81,9 @@ $white: #fff;
 				fill: var(--white);
 				width: 22px;
 				transition: all .2s;
-				transition-delay: .2s;
+				transition-delay: .1s;
 				transform: scale(.2);
-				opacity: .2;
+				opacity: 0;
 			}
 		}
 	}
