@@ -1,0 +1,86 @@
+$white: #fff;
+
+.app{
+	&-wrap{
+		--white: #{$white};
+		background: #5236b7 url("../images/bg-app.jpg") no-repeat 0 0 / cover;
+		height: 100vh;
+		color: var(--white);
+	}
+}
+.app_item{
+	aspect-ratio: 10/8;
+	text-decoration: none;
+	color: var(--white);
+	transition: all .2s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	&:hover{
+		text-decoration: none;
+		.app_item-icon{
+			width: 80px;
+			opacity: .2;
+		}
+		.app_item-actions{
+			height: 50px;
+		}
+		.action-icon{
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+	&-icon{
+		fill: var(--white);
+		transition: all .2s;
+		width: 120px;
+		height: auto;
+	}
+	&-title{
+		font-size: 18px;
+		margin-top: .9em;
+		margin-bottom: 0;
+	}
+	&-actions{
+		transition: all .2s;
+		height: 0;
+		overflow: hidden;
+		padding-top: 10px;
+		.action{
+			&-icon{
+				fill: var(--white);
+				width: 22px;
+				transition: all .2s;
+				transition-delay: .2s;
+				transform: scale(.2);
+				opacity: .2;
+			}
+		}
+	}
+}
+
+
+/* SS -------------------- */
+@media (min-width: 425px){}
+	
+
+/* SM -------------------- */
+@media (min-width: 576px){}
+	
+	
+/* MD -------------------- */
+@media (min-width: 768px){}
+	
+	
+/* LG -------------------- */
+@media (min-width: 992px){}
+	
+	
+/* XL -------------------- */
+@media (min-width: 1200px){}
+	
+	
+/* XXL ------------------- */
+@media (min-width: 1400px){}
+	

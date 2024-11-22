@@ -1,0 +1,55 @@
+$black: #181818;
+$primary: #008ecc;
+$secondary: #f7daf8;
+
+$b: var(--black);
+$p: var(--primary);
+$s: var(--secondary);
+
+:root{
+	--index: calc(1vw + 1vh);
+	--black: #{$black};
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+}
+
+html{
+	scroll-behavior: smooth;
+}
+	
+	
+	
+
+@import '_app_screen';
+
+
+
+@function to-rgb($color){
+	@return red($color), green($color), blue($color);
+}
+
+
+
+/* SS -------------------- */
+@media (min-width: 425px){}
+	
+
+/* SM -------------------- */
+@media (min-width: 576px){}
+	
+	
+/* MD -------------------- */
+@media (min-width: 768px){}
+	
+	
+/* LG -------------------- */
+@media (min-width: 992px){}
+	
+	
+/* XL -------------------- */
+@media (min-width: 1200px){}
+	
+	
+/* XXL ------------------- */
+@media (min-width: 1400px){}
+	
