@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>CRM</title>
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/theme.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<section class="app-wrap">
-		<div class="container-fluid">
-			1
-		</div>
+	<section class="app">
 		<div class="container">
-			<div class="row g-0">
-				<div class="col-6 col-lg-3">
+			<div class="app-row size-4">
+				<div class="app-col">
 					<a href="#" class="app_item">
 						<svg class="app_item-icon" viewBox="0 0 24 24"><use xlink:href="#app-calendar"></use></svg>
 						<h3 class="app_item-title">Calendar</h3>
@@ -28,7 +28,7 @@
 						</span>
 					</a>
 				</div>
-				<div class="col-6 col-lg-3">
+				<div class="app-col">
 					<a href="#" class="app_item">
 						<svg class="app_item-icon" viewBox="0 0 24 24"><use xlink:href="#app-dialog"></use></svg>
 						<h3 class="app_item-title">Dialog</h3>
@@ -39,7 +39,7 @@
 						</span>
 					</a>
 				</div>
-				<div class="col-6 col-lg-3">
+				<div class="app-col">
 					<a href="#" class="app_item">
 						<svg class="app_item-icon" viewBox="0 0 24 24"><use xlink:href="#app-contact"></use></svg>
 						<h3 class="app_item-title">Contact</h3>
@@ -50,7 +50,7 @@
 						</span>
 					</a>
 				</div>
-				<div class="col-6 col-lg-3">
+				<div class="app-col">
 					<a href="#" class="app_item">
 						<svg class="app_item-icon" viewBox="0 0 24 24"><use xlink:href="#app-crm"></use></svg>
 						<h3 class="app_item-title">CRM</h3>
@@ -61,7 +61,7 @@
 						</span>
 					</a>
 				</div>
-				<div class="col-6 col-lg-3">
+				<div class="app-col">
 					<a href="#" class="app_item">
 						<svg class="app_item-icon" viewBox="0 0 24 24"><use xlink:href="#app-crm"></use></svg>
 						<h3 class="app_item-title">CRM</h3>
@@ -76,8 +76,7 @@
 		</div>
 	</section>
 	
-	<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<svg width="0" height="0" >
+	<svg class="svg-sprite">
 		<symbol id="app-calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 		<defs></defs>
 		<path d="m8.63,2.11c-.27,0-.49.22-.49.49s.22.49.49.49.49-.22.49-.49c0-.27-.22-.49-.49-.49Zm6.75,0c-.27,0-.49.22-.49.49s.22.49.49.49.49-.22.49-.49-.22-.49-.49-.49Zm8.61,19.55l-.72-8.26.72-6.92c.06-.6-.14-1.17-.54-1.62-.1-.11-.21-.21-.33-.3v-2.25C23.11,1.03,22.08,0,20.81,0H2.99C1.72,0,.69,1.03.69,2.3v2.42s-.09.08-.13.13C.15,5.29-.04,5.87.02,6.47l.72,6.92L0,21.65c-.06.6.14,1.17.55,1.62.42.46,1.03.73,1.67.73h19.55c.64,0,1.24-.27,1.67-.73.41-.45.6-1.02.55-1.62ZM1.67,2.3c0-.73.59-1.32,1.32-1.32h17.82c.73,0,1.32.59,1.32,1.32v1.84c-.12-.02-.24-.03-.36-.03H2.23c-.19,0-.38.02-.56.07v-1.88Zm21.05,20.31c-.24.26-.58.41-.94.41H2.22c-.36,0-.71-.15-.94-.41-.22-.24-.33-.55-.3-.87l.69-7.86h3.4c.27,0,.49-.22.49-.49s-.22-.49-.49-.49H1.67l-.67-6.52c-.03-.32.07-.63.29-.87.24-.26.58-.41.94-.41h19.54c.36,0,.71.15.94.41.22.24.33.55.29.87l-.68,6.53h-3.56c-.27,0-.49.22-.49.49s.22.49.49.49h3.56l.69,7.87c.03.32-.08.63-.3.87Zm-7.65-1.7h-.22c-.27,0-.49.22-.49.49s.22.49.49.49h.22c.27,0,.49-.22.49-.49s-.22-.49-.49-.49Zm6.34,0h-4.76c-.27,0-.49.22-.49.49s.22.49.49.49h4.76c.27,0,.49-.22.49-.49s-.22-.49-.49-.49Zm-9.79-7.05c-.15-.16-.49-.42-.78-.59.79-.73,1.18-1.5,1.18-2.32,0-.77-.28-1.43-.83-1.98-.55-.55-1.22-.82-2-.82-.4,0-.76.07-1.09.2-.33.14-.63.34-.91.61-.27.27-.48.57-.62.9-.14.33-.21.69-.21,1.08,0,.25.21.44.45.44s.44-.2.44-.44c0-.53.19-.97.57-1.34.37-.38.83-.57,1.36-.57s.98.19,1.36.57c.38.37.57.82.57,1.34s-.19.98-.57,1.36c-.38.37-.83.56-1.36.56-.24,0-.44.19-.44.44,0,.25.2.45.44.45.7,0,1.3.25,1.79.74.5.49.75,1.08.75,1.77s-.25,1.28-.75,1.77c-.49.49-1.09.73-1.79.73-.35,0-.67-.06-.96-.18-.29-.12-.57-.3-.83-.55-.49-.5-.73-1.09-.73-1.77,0-.25-.2-.44-.44-.44s-.45.2-.45.44c0,.93.33,1.73,1,2.4.68.66,1.49.99,2.43.99s1.75-.33,2.42-.99c.67-.66,1-1.45,1-2.4s-.34-1.74-1-2.4Zm4.67-5.63c-.13-.09-.28-.09-.43-.05l-1.79.6c-.22.11-.34.36-.24.6.04.1.13.19.24.24.12.05.24.04.35,0l1.16-.37v9.97c0,.25.21.44.45.44s.44-.2.44-.44v-10.6c0-.15-.07-.28-.19-.37Z"></path>
